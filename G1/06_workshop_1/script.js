@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 // Selected Elements
 const html = {
     cardContainer: document.querySelector('#cardContainer'),
@@ -38,3 +39,72 @@ function createCard(country) {
 
 // Init
 getCountries();
+=======
+//selektiranje
+const html = {
+    cardContainer: document.querySelector('#cardContainer'),
+
+
+
+}
+
+
+
+//funkcija
+ function GetCountrys(){
+    fetch('https://restcountries.com/v3.1/all')
+    .then(rasponse => rasponse.json())
+    .then(countries => ShowCountries(countries));
+ }
+
+ //posebni console log za sekoa drzava
+function ShowCountries(countries){
+    countries.forEach(c => console.log(c));
+    html.cardContainer.innerHTML  += createCard(countries);
+}
+//
+function createCard(country) {
+    return `
+    <div class="colum margin-bottom>
+    <div class="info-card">>
+    <img src="${country.flags.png}" class="info-image" alt="${country.flags.alt}" />
+    </div>
+    </div>
+    <div class="info-body"
+    <h5 class="info-title">${country.name}<h5>
+    <p class=" ">${country.name.common} is a country with population of${country.population}</p>
+    capital cyty is ${country.capital[0]}.</>
+    </div>
+    <div class="info-foother">
+    <small class="text-muted">open a <a href="http://>wikipedia</a>.</small>`
+    
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> Stashed changes
